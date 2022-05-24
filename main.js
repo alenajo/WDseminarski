@@ -1,0 +1,1 @@
+const BASE_URL = "https://ptf-web-dizajn-2022.azurewebsites.net";
