@@ -28,7 +28,7 @@ const renderBooks = (books) => {
     resultBooksHtml += `
         <div class="card mx-2 my-4" style="width: 18rem;">
             <img src="${book.image}" class="card-img-top my-1" alt="...">
-            <div class="card-body">
+            <div class="card-body flex-column">
                 <h5 class="card-title">${book.name}</h5>
                 <p class="card-text">${book.author.name} </p>
                 <p class="card-text">Genre: ${book.genre}</p>

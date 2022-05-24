@@ -20,7 +20,7 @@ body{
     justify-content: center;
 }
 .row{
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: center;
 }
 .card{
