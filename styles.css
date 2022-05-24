@@ -11,3 +11,6 @@ body{
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+.navbar{
+    background: linear-gradient(to left, #d0bdd3, #e9e4f0);
+}
