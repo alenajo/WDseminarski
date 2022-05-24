@@ -55,3 +55,29 @@ const renderAuthors = (authors) => {
   dropDownLists.innerHTML = dropDownListHtml;
   dropDownListUpdate.innerHTML = dropDownListHtml;
 };
+let addBookForm = document.getElementById("add-book-form");
+addBookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(e.target[0].value); //naslov
+  console.log(e.target[1].value); //zanr
+  console.log(e.target[2].value); //slika
+  console.log(e.target[3].value); //id autora
+  fetch(`${BASE_URL}/books`, {
+    method: "POST",
+    headers: new Headers({ "content-type": "application/json" }),
+    body: JSON.stringify({
+      name: String(e.target[0].value),
+      genre: String(e.target[1].value),
+      image: String(e.target[2].value),
+      authorId: String(e.target[3].value),
+    }),
+  }).then((res) => {
+    console.log(res);
+  });
+});
+
+let bookIDInput = document.getElementById("bookId");
+let nameIDInput = document.getElementById("nameId");
+let genreIDInput = document.getElementById("genreId");
+let pictureIDInput = document.getElementById("pictureId");
+let authorIDInput = document.getElementById("dropdownAuthorsSec");

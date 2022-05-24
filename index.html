@@ -30,6 +30,36 @@
           </div>
     </div>
 </div>
+<!-- Dodavanje knjige -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addModalLabel">Book info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="add-book-form">
+          <div class="mb-3">
+              <label for="add-book-name" class="col-form-label">Naslov:</label>
+              <input type="text" class="form-control" id="add-book-name">
+              <label for="add-book-genre" class="col-form-label">Žanr:</label>
+              <input type="text" class="form-control" id="add-book-genre">
+              <label for="add-book-image" class="col-form-label">Slika:</label>
+              <input type="text" class="form-control" id="add-book-image">
+              <label for="add-book-author" class="col-form-label">Autor:</label>
+              <select class="form-select" aria-label="Default select example" id="dropdownAuthors"> 
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+              <button type="submit" class="btn btn-primary">Spremi</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Footer -->
 <footer class="text-white text-center text-lg-start" id="footer">
   <div class="container-fluid p-4">
