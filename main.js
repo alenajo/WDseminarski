@@ -121,7 +121,7 @@ const editBook = (bookId) => {
   //Brisanje knjige (DELETE)
 const deleteBook = (bookId) => {
     console.log(bookId);
-    if (!confirm("Are you sure you want to delete this item?")) {
+    if (!confirm("Jeste li sigurni da želite ukloniti ovu knjigu?")) {
       return false;
     }
     fetch(`${BASE_URL}/books/${bookId}`, {
