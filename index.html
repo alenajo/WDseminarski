@@ -60,6 +60,48 @@
     </div>
   </div>
 </div>
+<!-- Uređivanje knjige -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Book info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+  <form id="edit-book-form">
+    <div class="mb-3">
+      <label for="edit-book-id" class="col-form-label" >Knjiga ID:</label>
+      <input type="text" class="form-control"  disabled id="bookId">
+    </div>
+    <div class="mb-3">
+      <label for="edit-book-name" class="col-form-label">Naziv:</label>
+      <input type="text" class="form-control"  id="nameId">
+    </div>
+    <div class="mb-3">
+        <label for="edit-book-genre" class="col-form-label">Žanr:</label>
+        <input type="text" class="form-control"  id="genreId">
+    </div>
+    <div class="mb-3">
+        <label for="edit-book-image" class="col-form-label" >Slika:</label>
+        <input type="text" class="form-control"  id="pictureId"> 
+    </div>
+    <div class="mb-3">
+        <label for="edit-book-author-id" class="col-form-label">Autor:</label>
+        <!-- <input type="text" class="form-control" id="edit-book-author-id"disabled> -->
+        <select class="form-select" aria-label="Default select example" id="dropdownAuthorsSec">
+          <!-- Dropdown list autora -->
+     </select>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+      <button type="submit" class="btn btn-primary">Spremi</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
 <!-- Footer -->
 <footer class="text-white text-center text-lg-start" id="footer">
   <div class="container-fluid p-4">

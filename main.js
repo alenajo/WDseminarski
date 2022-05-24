@@ -43,8 +43,10 @@ const renderBooks = (books) => {
   });
   booksRow.innerHTML = resultBooksHtml;
 };
+
 let dropDownListUpdate = document.getElementById("dropdownAuthorsSec");
 let dropDownLists = document.getElementById("dropdownAuthors");
+
 const renderAuthors = (authors) => {
   //popunjavanje drop down liste (za update Modal i add Book Modal)
   let dropDownListHtml = " ";
@@ -55,7 +57,9 @@ const renderAuthors = (authors) => {
   dropDownLists.innerHTML = dropDownListHtml;
   dropDownListUpdate.innerHTML = dropDownListHtml;
 };
+
 let addBookForm = document.getElementById("add-book-form");
+
 addBookForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(e.target[0].value); //naslov
@@ -81,3 +85,39 @@ let nameIDInput = document.getElementById("nameId");
 let genreIDInput = document.getElementById("genreId");
 let pictureIDInput = document.getElementById("pictureId");
 let authorIDInput = document.getElementById("dropdownAuthorsSec");
+
+const editBook = (bookId) => {
+    //Popunjavanje Modala u updateu (da je sve upisano unutar vec sa podacima o knjizi)
+    fetch(`${BASE_URL}/books/${String(bookId)}`)
+      .then((response) => response.json())
+      .then((data) => {
+        bookIDInput.defaultValue = `${bookId}`;
+        nameIDInput.defaultValue = `${data.name}`;
+        genreIDInput.defaultValue = `${data.genre}`;
+        pictureIDInput.defaultValue = `${data.image}`;
+        authors.forEach((author, index) => {
+          if (author.id == data.authorId) {
+            dropDownListUpdate.selectedIndex = index;
+          }
+        });
+      });
+  };
+  let editForm = document.getElementById("edit-book-form");
+  editForm.addEventListener("submit", (e) => {
+    //Kad se submita Update forma (PUT)
+    e.preventDefault();
+    console.log("SUMBITALOSE");
+    fetch(`${BASE_URL}/books`, {
+      method: "PUT",
+      headers: new Headers({ "content-type": "application/json" }),
+      body: JSON.stringify({
+        bookId: String(e.target[0].value),
+        name: String(e.target[1].value),
+        genre: String(e.target[2].value),
+        image: String(e.target[3].value),
+        authorId: String(e.target[4].value),
+      }),
+    }).then((res) => {
+      console.log(res);
+    });
+  });
