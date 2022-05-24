@@ -14,3 +14,30 @@ body{
 .navbar{
     background: linear-gradient(to left, #d0bdd3, #e9e4f0);
 }
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.row{
+    align-items: flex-start;
+    justify-content: center;
+}
+.card{
+    background: linear-gradient(to left, #d7c3db, #e9e4f0);
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.6);
+}
+.card-title{
+    font-weight: bold ;
+}
+.btn-primary {
+    background-color: #b485b9;
+    color: #f8f8f8;
+}
+.btn-primary:hover {
+    background-color: #434343;
+    color: #f8f8f8;
+}
+.btn-danger {
+    background-color: rgb(134, 73, 73);
+}
