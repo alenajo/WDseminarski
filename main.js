@@ -121,3 +121,16 @@ const editBook = (bookId) => {
       console.log(res);
     });
   });
+  //Brisanje knjige (DELETE)
+const deleteBook = (bookId) => {
+    console.log(bookId);
+    if (!confirm("Are you sure you want to delete this item?")) {
+      return false;
+    }
+    fetch(`${BASE_URL}/books/${bookId}`, {
+      method: "DELETE",
+    }).then((res) => {
+      console.log(res);
+    });
+  };
+  
