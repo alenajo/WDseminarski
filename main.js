@@ -32,9 +32,6 @@ const renderBooks = (books) => {
                 <h5 class="card-title">${book.name}</h5>
                 <p class="card-text">${book.author.name} </p>
                 <p class="card-text">Genre: ${book.genre}</p>
-                <button id="add-favorites-button" type="button" class="btn btn-primary" onclick="getElementById('${book.id}')">
-                <i class="bi bi-bookmark-heart"></i>
-                </button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editBook('${book.id}')">Uredi</button>
                 <button type="button" onclick="deleteBook('${book.id}')" class="btn btn-danger">Izbriši</button>
             </div>
